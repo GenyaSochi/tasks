@@ -6,13 +6,13 @@
 <br></br>
 {{ toDo }}
     <button @click="">Добавить</button>
-    <button>Удалить</button>  
   </div> 
-  <div>
+  <div style="display: flex;">
     <p>Список пуст</p>
     <ol id="toAddList">
       <li></li>
     </ol>
+    <button>Удалить</button>  
   </div>
 </template>
 
