@@ -8,5 +8,6 @@ import Task1Component from './components/Task1Component.vue';
     <NuxtRouteAnnouncer />
     <Task1Component />
     <Task2Component />
+    <Task3Component />
   </div>
 </template>

@@ -1,25 +1,35 @@
 <template>
   <p>Задача 2: "Список дел (To-Do List)"</p>
-  <div class="view-list">
-    <input type="text" placeholder="Дело" v-model="text">
-{{ text }}
-<br></br>
-{{ toDo }}
-    <button @click="">Добавить</button>
-  </div> 
-  <div style="display: flex;">
-    <p>Список пуст</p>
-    <ol id="toAddList">
-      <li></li>
+  <form @submit.prevent="addText" class="view-list">
+    <input type="text" placeholder="Добавить дело" v-model="text">
+    <button>Добавить</button>
+  </form> 
+  <div class="all-text">
+    <p v-if="!toDo.length">Список пуст</p>
+    <ol>      
+      <li v-for="el, i of toDo" :key="el+i">
+        {{ el }}
+        <button @click="deleteItem(i)">Удалить</button>  
+      </li>
     </ol>
-    <button>Удалить</button>  
   </div>
 </template>
 
 <script setup lang="ts">
-const toDo = ref([])
+const toDo = ref([] as string[])
 const text = ref('')
 
+
+const addText = () => {
+  if (text.value) {
+    toDo.value.push(text.value)
+  }
+  text.value = ''
+}
+
+const deleteItem = (i:number) => {
+  toDo.value.splice(i, 1)//хотим удалить 1 элемент, удаляем значение по индексу
+}
 
 </script>
 
@@ -29,6 +39,9 @@ const text = ref('')
   gap: 10px;
 }
 
+.all-text {
+  display: flex;
+}
 </style>
 _________________________________________________________________________________________________________________
 Задача 2: "Список дел (To-Do List)"
