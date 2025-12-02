@@ -3,13 +3,21 @@
   <form>
     <input type="text" placeholder="введите пароль">
     
-    <button disabled @click="">зарегистрироваться</button>
+    <button disabled @click="reg" >зарегистрироваться</button>
     
   </form>
 
 </template>
 
 <script setup lang="ts">
+
+const text = ref('')
+const reg = () => {
+  if(text.value){
+ 
+  }
+}
+
 </script>
 
 <style>
