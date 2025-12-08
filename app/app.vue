@@ -9,5 +9,6 @@ import Task1Component from './components/Task1Component.vue';
     <Task1Component />
     <Task2Component />
     <Task3Component />
+    <Task4Component />
   </div>
 </template>
