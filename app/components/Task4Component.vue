@@ -3,8 +3,8 @@
   <button @click="ascending">По возрастанию</button>
   <button @click="decreasing">По убыванию</button>
   <button @click="red">Только красные</button>
-  <button>Только черные</button>
-  <button>Только тузы</button>
+  <button @click="black">Только черные</button>
+  <button @click="aces">Только тузы</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i * 25}px; z-index:${i + 1}`" v-for="card, i of cards"
       :key="card.type + '' + card.value">
@@ -92,9 +92,9 @@ function shuffle() {
   }
 }
 function ascending() {
-  // cards.value.sort((a, b) => a.value - b.value)  
-  cards.value.sort((a, b) => a.type ** 4 * a.value - b.type ** 4 * b.value)
-  console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
+  cards.value.sort((a, b) => a.value - b.value)  
+  // cards.value.sort((a, b) => a.type ** 4 * a.value - b.type ** 4 * b.value)
+  // console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
 }
 
 function decreasing() {
@@ -102,8 +102,18 @@ function decreasing() {
 }
 
 function red() {
-  cards.value.sort((a, b) => a.type ** 1 * a.value - b.type ** 2 * b.value)
+  // cards.value.sort((a, b) => a.type ** 1 * a.value - b.type ** 2 * b.value)
+  // console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
+  cards.value.sort((a, b) => a.type ** 2 * a.value - b.type ** 3 * b.value)
   console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
+}
+
+function black() {
+
+}
+
+function aces() {
+
 }
 </script>
 
