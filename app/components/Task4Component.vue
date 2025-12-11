@@ -10,7 +10,7 @@
       :key="card.type + '' + card.value">
       <template v-if="card.status">
         <div style="display:flex; flex-direction: column; align-items: flex-start;"><span>{{ types[card.type]
-        }}</span><span style="text-align: center;">{{ values[card.value] ? values[card.value] : card.value }}</span>
+            }}</span><span style="text-align: center;">{{ values[card.value] ? values[card.value] : card.value }}</span>
         </div>
         <div>{{ values[card.value] ? values[card.value] : card.value }}</div>
         <div style="display:flex; flex-direction: column; align-items: flex-end;"><span>{{ values[card.value] ?
@@ -64,18 +64,22 @@ const cardsRefence = [
   { type: 4, value: 14, status: 1 },
 ]
 const cards = ref([...cardsRefence] as any[])
-const types = {
+
+const types =  {
   1: '♣️',
   2: '♦️',
   3: '♥️',
   4: '♠️',
 } as any
+
 const values = {
   11: 'В',
   12: 'Д',
   13: 'К',
   14: 'А',
 } as any
+
+
 
 function randomInteger(min: number, max: number) {
   let rand = min + Math.random() * (max + 1 - min);
@@ -92,7 +96,7 @@ function shuffle() {
   }
 }
 function ascending() {
-  cards.value.sort((a, b) => a.value - b.value)  
+  cards.value.sort((a, b) => a.value - b.value)
   // cards.value.sort((a, b) => a.type ** 4 * a.value - b.type ** 4 * b.value)
   // console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
 }
@@ -102,14 +106,16 @@ function decreasing() {
 }
 
 function red() {
-  // cards.value.sort((a, b) => a.type ** 1 * a.value - b.type ** 2 * b.value)
-  // console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
-  cards.value.sort((a, b) => a.type ** 2 * a.value - b.type ** 3 * b.value)
+  cards.value.sort((a, b) => (a.type ** 4 * a.value - b.type ** 4 * b.value))
   console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
+  return [2,3]
 }
 
-function black() {
 
+
+function black() {
+  cards.value.sort((a, b) => (a.type ** 4 * a.value - b.type ** 4 * b.value))
+  console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
 }
 
 function aces() {
