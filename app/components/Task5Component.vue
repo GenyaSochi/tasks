@@ -87,7 +87,7 @@ function shuffle() {
 }
 
 function distribute() {
- cards.value = 
+ 
 }
 
 </script>
