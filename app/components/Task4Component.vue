@@ -65,7 +65,7 @@ const cardsRefence = [
 ]
 const cards = ref([...cardsRefence] as any[])
 
-const types =  {
+const types = {
   1: '♣️',
   2: '♦️',
   3: '♥️',
@@ -106,20 +106,15 @@ function decreasing() {
 }
 
 function red() {
-  cards.value.sort((a, b) => (a.type ** 4 * a.value - b.type ** 4 * b.value))
-  console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
-  return [2,3]
+  cards.value = cardsRefence.filter(card => [2, 3].includes(card.type))
 }
 
-
-
 function black() {
-  cards.value.sort((a, b) => (a.type ** 4 * a.value - b.type ** 4 * b.value))
-  console.log(cardsRefence.map(el => el.type * el.value).sort((a, b) => a - b))
+  cards.value = cardsRefence.filter(card => [1, 4].includes(card.type))
 }
 
 function aces() {
-
+  cards.value = cardsRefence.filter(card => [14].includes(card.value))
 }
 </script>
 
