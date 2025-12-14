@@ -9,7 +9,6 @@
   <button @click="booby">Только буби</button>
   <button @click="worms">Только черви</button>
   <button @click="peaks">Только пики</button>
-  <button @click="newShuffle">Новая раздача</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i * 25}px; z-index:${i + 1}`" v-for="card, i of cards"
       :key="card.type + '' + card.value">
@@ -92,6 +91,7 @@ function randomInteger(min: number, max: number) {
 }
 
 function shuffle() {
+  cards.value = cardsRefence
   const max = cards.value.length - 1
   for (let i = 0; i < 500; i++) {
     const x = randomInteger(0, max)
@@ -118,7 +118,6 @@ function black() {
   cards.value = cardsRefence.filter(card => [1, 4].includes(card.type))  
 } 
 
-
 function aces() {
   cards.value = cardsRefence.filter(card => [14].includes(card.value))
 }
@@ -139,9 +138,6 @@ function peaks() {
   cards.value = cardsRefence.filter(card => [4].includes(card.type))
 }
 
-function newShuffle() {
-  cards.value = cardsRefence
-}
 </script>
 
 <style scoped>
