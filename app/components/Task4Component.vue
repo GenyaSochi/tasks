@@ -5,6 +5,11 @@
   <button @click="red">Только красные</button>
   <button @click="black">Только черные</button>
   <button @click="aces">Только тузы</button>
+  <button @click="clubs">Только трефы</button>
+  <button @click="booby">Только буби</button>
+  <button @click="worms">Только черви</button>
+  <button @click="peaks">Только пики</button>
+  <button @click="newShuffle">Новая раздача</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i * 25}px; z-index:${i + 1}`" v-for="card, i of cards"
       :key="card.type + '' + card.value">
@@ -110,11 +115,32 @@ function red() {
 }
 
 function black() {
-  cards.value = cardsRefence.filter(card => [1, 4].includes(card.type))
-}
+  cards.value = cardsRefence.filter(card => [1, 4].includes(card.type))  
+} 
+
 
 function aces() {
   cards.value = cardsRefence.filter(card => [14].includes(card.value))
+}
+
+function clubs() {
+  cards.value = cardsRefence.filter(card => [1].includes(card.type))
+}
+
+function booby() {
+  cards.value = cardsRefence.filter(card => [2].includes(card.type))
+}
+
+function worms() {
+  cards.value = cardsRefence.filter(card => [3].includes(card.type))
+}
+
+function peaks() {
+  cards.value = cardsRefence.filter(card => [4].includes(card.type))
+}
+
+function newShuffle() {
+  cards.value = cardsRefence
 }
 </script>
 
