@@ -7,7 +7,7 @@
   <button @click="aces">Только тузы</button>
   <button @click="clubs">Только трефы</button>
   <button @click="booby">Только буби</button>
-  <button @click="worms">Только черви</button>
+  <button @click="hearts">Только черви</button>
   <button @click="peaks">Только пики</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i * 25}px; z-index:${i + 1}`" v-for="card, i of cards"
@@ -130,7 +130,7 @@ function booby() {
   cards.value = cardsRefence.filter(card => [2].includes(card.type))
 }
 
-function worms() {
+function hearts() {
   cards.value = cardsRefence.filter(card => [3].includes(card.type))
 }
 
