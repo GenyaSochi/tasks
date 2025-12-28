@@ -12,5 +12,11 @@ import Task1Component from './components/Task1Component.vue';
     <Task4Component />
     <Task5Component />
     <Task6Component />
+    <Task7Component />
+    <Task8Component />
+    <Task9Component />
+    <Task10Component />
+    <Task11Component />
+    <Task12Component />
   </div>
 </template>
