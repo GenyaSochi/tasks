@@ -1,18 +1,23 @@
 <template>
-  <p>Создать компонент профиля пользователя</p>
-  <form @submit.prevent>
-    <p>Введите имя</p>
-    <input type="text" placeholder="имя" v-model="user.name">{{ user.name }}
-    <p>Введите возраст</p>
-    <input type="text" placeholder="возраст" v-model="user.age">{{ user.age }}
-    <p>Введите электронную почту</p>
-    <input type="text" placeholder="почта" v-model="user.email">{{ user.email }}
-    <br>
-    <button @click="reset">сбросить</button>
-  </form>
+  <div class="userForm">
+    <p class="heading"><i>Создать компонент профиля пользователя</i></p>
+    <form @submit.prevent>
+      <p class="view"><i>Введите имя</i></p>
+      <input type="text" placeholder="имя" v-model="user.name">
+      <p class="view"><i>Введите возраст</i></p>
+      <input type="text" placeholder="возраст" v-model="user.age">
+      <p class="view"><i>Введите электронную почту</i></p>
+      <input type="text" placeholder="почта" v-model="user.email">
+      <br>
+      <div>
+        <button @click="reset" :style="resetBut" class="but">сбросить</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script setup lang="ts">
+
 const user = reactive({
   name: '',
   age: '',
@@ -30,5 +35,33 @@ const reset = () => {
   // }
 }
 
+const resetBut = computed(() => {
+  if (user.name || user.age || user.email) {
+    return 'color:red'
+  }
+  return 'color: green'
+})
+
 </script>
-<style></style>
+<style scoped>
+.userForm {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 20px;
+}
+.but {
+  margin-top: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.view {
+font-size: 18px;
+margin: 0;
+padding: 10px 10px 10px 0;
+}
+</style>

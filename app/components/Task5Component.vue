@@ -57,9 +57,10 @@
         </template>
       </div>
     </div>
-
-    <button :disabled="!(isGame && whoMoves == 2 && count(2) != 21)" @click="take(2)">Взять</button>
-    <button :disabled="!(isGame && whoMoves == 2)" @click="userPass">Пас</button>
+    <div class="but">
+      <button :disabled="!(isGame && whoMoves == 2 && count(2) != 21)" @click="take(2)">Взять</button>
+      <button :disabled="!(isGame && whoMoves == 2)" @click="userPass">Пас</button>
+    </div>
   </div>
 </template>
 
@@ -179,10 +180,10 @@ const take = async (i: number) => {
   if (count(i) > 21) {
     winText.value = i == 1 ? 'Игрок победил' : 'Дилер победил'
     if (i == 1) {
-      counter.value[2]++ 
+      counter.value[2]++
     } else {
       counter.value[1]++
-    }   
+    }
     users.value[1][0].status = 1
     isGame.value = false
     whoMoves.value = 0
@@ -245,8 +246,8 @@ function shuffle() {
 }
 
 const send4all = () => {
-  if(counter.value[1] == 2 || counter.value[2] == 2){
-    counter.value[1] = 0 
+  if (counter.value[1] == 2 || counter.value[2] == 2) {
+    counter.value[1] = 0
     counter.value[2] = 0
   }
   shuffle()
@@ -303,5 +304,8 @@ const send4all = () => {
 
 .game {
   margin-bottom: 10px;
+}
+.but {
+  padding-bottom: 30px;
 }
 </style>
