@@ -4,7 +4,6 @@ import Task1Component from './components/Task1Component.vue';
 </script>
 
 <template>
-  <div>
     <NuxtRouteAnnouncer />
     <Task1Component />
     <Task2Component />
@@ -18,5 +17,5 @@ import Task1Component from './components/Task1Component.vue';
     <Task10Component />
     <Task11Component />
     <Task12Component />
-  </div>
+    <Task13Component />
 </template>
