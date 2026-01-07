@@ -6,6 +6,7 @@
   </div>
   <button @click="update">обновить</button> 
 </template>
+<slot></slot>
 <script setup lang="ts">
 const isLoading = ref(false)
 const data = ref(null as any)

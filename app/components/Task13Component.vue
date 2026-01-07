@@ -1,19 +1,19 @@
 <template>
-<Card title="Приветствие">
-  Добро пожаловать во Vue 3!
-</Card>
+  <slot></slot>
+  <!-- <Card title="Приветствие">{{ {text} }}</Card> -->
 </template>
 <script setup lang="ts">
 
+import { ref } from 'vue'
 
+
+
+// const props = defineProps(['text'])
+// const text = ref(' Добро пожаловать во Vue 3!')
 </script>
 
 <style scoped>
-.hello {
-  background-color: blue;  
-  color: aliceblue;
-  height: 300px;
-}
+
 </style>
 ______________________________________________________________________
 Создайте компонент Card, который:
@@ -26,4 +26,3 @@ ______________________________________________________________________
 </Card> -->
 
 Ожидаемый результат: Карточка с заголовком "Приветствие" и текстом "Добро пожаловать во Vue 3!".
-

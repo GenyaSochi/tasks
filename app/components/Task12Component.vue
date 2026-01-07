@@ -7,7 +7,6 @@
   <button :disabled="isFirstSend && !validation">отправить</button>  
   </form>  
 </template>
-<slot></slot>
 <script setup lang="ts">
 
 const error = ref('')
