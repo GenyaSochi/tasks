@@ -14,9 +14,23 @@
       </div>
     </form>
   </div>
+  <ImputComonent v-model="text"></ImputComonent>
+  <p>{{ text }}</p>
+  <UserComponent v-model:firstName="firstName" v-model:lastName="lastName" v-model:email="email"></UserComponent>
+  {{ firstName }}
+  {{ lastName }}
+  {{ email }}
 </template>
 
 <script setup lang="ts">
+import ImputComonent from './ImputComonent.vue'
+import UserComponent from './UserComponent.vue'
+
+
+const firstName = ref('')
+const lastName = ref('')
+const email = ref('')
+const text = ref('')
 
 const user = reactive({
   name: '',

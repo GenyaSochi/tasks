@@ -1,19 +1,24 @@
 <template>
-  <slot></slot>
-  <!-- <Card title="Приветствие">{{ {text} }}</Card> -->
+  <Card title="Приветствие" class="titleText">
+    Добро пожаловать во Vue 3!
+  </Card>
 </template>
+
 <script setup lang="ts">
-
-import { ref } from 'vue'
-
-
-
-// const props = defineProps(['text'])
-// const text = ref(' Добро пожаловать во Vue 3!')
+import Card from './CardComponent.vue';
 </script>
 
-<style scoped>
-
+<style>
+.titleText {
+  background-color: black;
+  color: white;
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+}
 </style>
 ______________________________________________________________________
 Создайте компонент Card, который:

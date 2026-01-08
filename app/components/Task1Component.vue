@@ -1,16 +1,29 @@
 <template>
-  <div>    
+  <div>
     <p>Задачи на понимание vue</p>
     <p>Задача 1: "Счетчик с ограничением"</p>
     <div class="view">
-      <button class="btn" @click="counter--" :disabled="!counter">-</button>  
+      <button class="btn" @click="counter--" :disabled="!counter">-</button>
       <p class="cnt">{{ counter }}</p>
       <button class="btn" @click="counter++">+</button>
     </div>
   </div>
+  <LayoutComponent>
+    <template #header>
+      <div class="new">С</div>
+    </template>
+    <template #default>
+      <div class="new">НОВЫМ</div>
+    </template>
+    <template #footer>
+      <div class="new">ГОДОМ!</div>
+    </template>
+  </LayoutComponent>
 </template>
 
+
 <script setup lang="ts">
+import LayoutComponent from './LayoutComponent.vue';
 const counter = ref(0)
 
 </script>
@@ -31,6 +44,10 @@ const counter = ref(0)
   flex-direction: row;
   gap: 10px;
   align-items: center;
+}
+
+.new {
+  text-align: center;
 }
 </style>
 _________________________________________________________________________________________________________________

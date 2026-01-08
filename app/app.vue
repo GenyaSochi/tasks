@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import Task1Component from './components/Task1Component.vue';
-
-</script>
-
 <template>
     <NuxtRouteAnnouncer />
     <Task1Component />
@@ -17,6 +12,5 @@ import Task1Component from './components/Task1Component.vue';
     <Task10Component />
     <Task11Component />
     <Task12Component />
-    <Task13Component />
-    <TestComponent />
+    <Task13Component />    
 </template>

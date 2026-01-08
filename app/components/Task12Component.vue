@@ -6,6 +6,7 @@
   <p v-if="isFirstSend && error">{{ error }}</p>
   <button :disabled="isFirstSend && !validation">отправить</button>  
   </form>  
+  <br>
 </template>
 <script setup lang="ts">
 
