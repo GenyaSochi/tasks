@@ -8,6 +8,7 @@
   </form>  
   <br>
 </template>
+
 <script setup lang="ts">
 
 const error = ref('')
